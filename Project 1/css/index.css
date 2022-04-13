@@ -1,0 +1,95 @@
+body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height:100vh;
+}
+
+li.active{
+    font-size: 1.5rem;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #222;
+} 
+
+footer{
+  text-align: center;
+  background-color: rgb(90, 90, 90);
+  color: white;
+  height: 10vh;
+  margin-top: auto;
+}
+footer p{
+  margin-top: 3vh;
+}
+
+#create-form, #table-data{
+  width:50%;
+  margin:auto;
+}
+#create-form label{
+  font-weight: normal;
+}
+
+.carousel, .carousel-inner, .item{
+  width: 100%;
+  height: 300px;
+}
+img{
+  width: 100%;
+  height: 300px;
+}
+
+ .carousel-caption{
+  background-color: rgba(189, 189, 189, 0.3);
+} 
+.carousel-caption h3, .carousel-caption p{
+  /* display: inline-block;
+  background-color: rgba(90, 90, 90, 0.5); */
+  text-shadow: 5px 5px 10px black, 5px 5px 15px red;
+  color: white;
+  font-weight: bolder;
+  font-size:2em;
+}
+
+.carousel-caption h3{
+  font-size:2.5em;
+}
+
+.glyphicon{
+  color: white;
+  font-weight: bolder;
+  font-size:2.5em;
+  margin-top:150px;
+}
+
+.tile-component{
+  width:70%;
+  margin:0 auto;
+}
+
+.images-container{
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.img-container{
+  height: 250px;
+  width: 400px;
+  margin:10px;
+}
+
+.tile-component .img-container img{
+  height: inherit;
+  width: inherit;
+}
+
+main{
+  margin-bottom:20px;
+}

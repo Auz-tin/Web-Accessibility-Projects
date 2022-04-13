@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Form</title>
+
+    <!--Linking bootstrap 3.0 css file & referencing jQuery and Js cdn-->
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!--Linking an external stylesheet-->
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav" aria-label="Menu">
+          <li role="menuitem">
+            <a href="../index.html">Home</a>
+          </li>
+          <li role="menuitem" class="active">
+            <a href="#">Create Form</a>
+          </li>
+          <li role="menuitem">
+            <a href="../html/table-data.html">Table Data</a>
+          </li>
+          <li
+            role="menuitem"
+            aria-haspopup="true"
+            aria-expanded="false"
+            class="dropdown"
+            id="dropdown"
+          >
+            <a tabindex="0" class="dropdown-toggle" data-toggle="dropdown"
+              >Dropdown link <span class="caret"></span>
+            </a>
+            <ul role="navigation" class="dropdown-menu">
+              <li role="menuitem">
+                <a href="../index.html">Home</a>
+              </li>
+              <li role="menuitem" class="active">
+                <a href="../html/create-form.html">Create Form</a>
+              </li>
+              <li role="menuitem">
+                <a href="../html/table-data.html">Table Data</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form tabindex="0" aria-labelledby="form-name" id="create-form">
+        <h2 id="form-name">Basic Information Form</h2>
+        <div class="form-group">
+          <label for="first-name">First Name:</label>
+          <input type="text" class="form-control" id="first-name" />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name:</label>
+          <input type="text" class="form-control" id="last-name" />
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select class="form-control" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="telephone">Telephone:</label>
+          <input type="tel" class="form-control" id="telephone" />
+        </div>
+        <div class="checkbox">
+          <label for="mobile"
+            ><input
+              type="checkbox"
+              id="mobile"
+              name="types"
+              checked
+            />Mobile</label
+          ><br />
+          <label for="home"
+            ><input type="checkbox" name="types" id="home" />Home</label
+          ><br />
+          <label for="office"
+            ><input type="checkbox" name="types" id="office" />Office</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </main>
+    <footer
+      aria-label="Copyright: Austin - Web Accessibility Expert"
+      tabindex="0"
+    >
+      <p>
+        &copy; Copyright March 2022: Austin - Web Accessibility Expert Training
+      </p>
+    </footer>
+    <script>
+      $(".navbar .dropdown-toggle").keypress(function (e) {
+        if (e.keyCode == 13) {
+          $(".navbar .dropdown-toggle").click();
+          var name = document
+            .getElementById("dropdown")
+            .getAttribute("aria-expanded");
+
+          if (name == "true") {
+            $("#dropdown").attr("aria-expanded", "false");
+          } else {
+            $("#dropdown").attr("aria-expanded", "true");
+          }
+        }
+      });
+
+      $("#create-form").focus(function (e) {
+        var name = document
+          .getElementById("dropdown")
+          .getAttribute("aria-expanded");
+        if (name == "true") {
+          $(".navbar .dropdown-toggle").click();
+          $("#dropdown").attr("aria-expanded", "false");
+        }
+      });
+    </script>
+  </body>
+</html>
